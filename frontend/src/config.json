@@ -1,5 +1,5 @@
 {
-    "region": "eu-north-1",
-    "userPoolId": "eu-north-1_g9lS64PLo",
-    "clientId": "5n4jqkv4onirsm8osjm7hhnnvv"
+    "region": "process.env.REACT_APP_COGNITO_REGION",
+    "userPoolId": "process.env.REACT_APP_COGNITO_USER_POOL_ID",
+    "clientId": "process.env.REACT_APP_COGNITO_APP_CLIENT_ID"
 }
