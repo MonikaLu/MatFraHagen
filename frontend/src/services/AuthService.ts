@@ -1,6 +1,7 @@
 import {
   AuthFlowType,
   CognitoIdentityProviderClient,
+  ConfirmSignUpCommand,
   InitiateAuthCommand,
   SignUpCommand,
 } from "@aws-sdk/client-cognito-identity-provider";
@@ -63,6 +64,23 @@ export const signUp = async (
     return response;
   } catch (error) {
     console.error("Error signing up: ", error);
+    throw error;
+  }
+};
+
+export const confirmSignUp = async (username: string, code: string) => {
+  const params = {
+    ClientId: config.clientId,
+    Username: username,
+    ConfirmationCode: code,
+  };
+  try {
+    const command = new ConfirmSignUpCommand(params);
+    await cognitoClient.send(command);
+    console.log("User confirmed successfully");
+    return true;
+  } catch (error) {
+    console.error("Error confirming sign up: ", error);
     throw error;
   }
 };

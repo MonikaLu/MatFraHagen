@@ -1,0 +1,50 @@
+import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { confirmSignUp } from "./services/AuthService";
+
+const ConfirmUserPage = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [username, setUsername] = useState(location.state?.username || "");
+  const [confirmationCode, setConfirmationCode] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      await confirmSignUp(username, confirmationCode);
+      alert("Account confirmed successfully!\nSign in on next page.");
+      navigate("/home");
+    } catch (error) {
+      alert(`Failed to confirm account: ${error}`);
+    }
+  };
+
+  return (
+    <div>
+      <h2>Confirm Account</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <input
+            type="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Username"
+            required
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            value={confirmationCode}
+            onChange={(e) => setConfirmationCode(e.target.value)}
+            placeholder="Confirmation Code"
+            required
+          />
+        </div>
+        <button type="submit">Confirm Account</button>
+      </form>
+    </div>
+  );
+};
+
+export default ConfirmUserPage;
