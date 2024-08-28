@@ -4,8 +4,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "",
+        background: "#fffffe",
+        headline:"#272343",
+        paragraph:"#2d334a",
+        button:"#ffd803",
+        buttonText:"#272343",
       },
+      illustration:{
+        stroke:"#272343",
+        main:"#fffffe",
+        highlight:"#ffd803",
+        secondary:"#e3f6f5",
+        tertiary:"#bae8e8"
+      }
     },
   },
   plugins: [],
