@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
+
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isSignUp, setIsSignUp] = useState(false);
@@ -36,7 +38,7 @@ export const Login = () => {
       return;
     }
     try {
-      await signUp(email, password);
+      await signUp(email, username, password);
       navigate("/confirm", { state: { email } });
     } catch (error) {
       alert(`Sign up failed: ${error}`);
@@ -49,17 +51,31 @@ export const Login = () => {
         <form onSubmit={isSignUp ? handleSignUp : handleSignIn}>
           <div>
             <input
-              className="border-black bg-blue-400 border-2"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               id="email"
-              type="email"
+              type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email"
               required
             />
           </div>
+
           <div>
             <input
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              id="username"
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Username"
+              required
+            />
+          </div>
+
+          <div>
+            <input
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               id="password"
               type="password"
               value={password}
@@ -71,6 +87,7 @@ export const Login = () => {
           {isSignUp && (
             <div>
               <input
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 id="confirmPassword"
                 type="password"
                 value={confirmPassword}
@@ -80,9 +97,17 @@ export const Login = () => {
               />
             </div>
           )}
-          <button type="submit">{isSignUp ? "Registrer" : "Logg inn"}</button>
+          <button
+            type="submit"
+            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            {isSignUp ? "Registrer" : "Logg inn"}
+          </button>
         </form>
-        <button onClick={() => setIsSignUp(!isSignUp)}>
+        <button
+          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          onClick={() => setIsSignUp(!isSignUp)}
+        >
           {isSignUp
             ? "Har du allerede en konto? Logg inn"
             : "Trenger du en konto? Registrer"}

@@ -40,10 +40,14 @@ export const signIn = async (username: string, password: string) => {
   }
 };
 
-export const signUp = async (email: string, password: string) => {
+export const signUp = async (
+  email: string,
+  username: string,
+  password: string
+) => {
   const params = {
     ClientId: config.clientId,
-    Username: email,
+    Username: username,
     Password: password,
     UserAttributes: [
       {
