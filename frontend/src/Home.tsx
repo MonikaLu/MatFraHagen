@@ -3,7 +3,7 @@ import LogOut from "./LogOut";
 const Home = () => {
   return (
     <div>
-      Velkommen inn!
+      Velkommen til MatFraHagen!
       <LogOut />
     </div>
   );

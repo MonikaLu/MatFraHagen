@@ -15,7 +15,7 @@ const ConfirmUserPage = () => {
       alert("Kontoen er bekreftet!");
       navigate("/home");
     } catch (error) {
-      alert(`Failed to confirm account: ${error}`);
+      alert(`Det oppstod en feil med bekreftelseskoden: ${error}`);
     }
   };
 
@@ -41,7 +41,7 @@ const ConfirmUserPage = () => {
             required
           />
         </div>
-        <button type="submit">Confirm Account</button>
+        <button type="submit">Bekreft kontoen</button>
       </form>
     </div>
   );

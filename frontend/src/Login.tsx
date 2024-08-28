@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -15,7 +14,6 @@ export const Login = () => {
     e.preventDefault();
     try {
       const session = await signIn(email, password);
-      console.log("Sign in successful", session);
       if (session && typeof session.AccessToken !== "undefined") {
         sessionStorage.setItem("accessToken", session.AccessToken);
         if (sessionStorage.getItem("accessToken")) {
@@ -27,21 +25,21 @@ export const Login = () => {
         console.error("SignIn session or AccessToken is undefined.");
       }
     } catch (error) {
-      alert(`Sign in failed: ${error}`);
+      alert(`Innlogging mislykket: ${error}`);
     }
   };
 
   const handleSignUp = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      alert("Passordene er ikke like");
+      alert("Passordene må være like.");
       return;
     }
     try {
       await signUp(email, username, password);
       navigate("/confirm", { state: { email } });
     } catch (error) {
-      alert(`Sign up failed: ${error}`);
+      alert(`Problem med bekreftelse: ${error}`);
     }
   };
   return (
@@ -68,7 +66,7 @@ export const Login = () => {
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="Username"
+              placeholder="Brukernavn"
               required
             />
           </div>

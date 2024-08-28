@@ -37,7 +37,7 @@ export const signIn = async (username: string, password: string) => {
       return AuthenticationResult;
     }
   } catch (error) {
-    console.error("Error signing in: ", error);
+    console.error("Det oppstod en feil ved innlogging: ", error);
     throw error;
   }
 };
@@ -59,7 +59,7 @@ export const signOut = async () => {
 
     window.location.href = "/login";
   } catch (error) {
-    console.error("Error during sign out: ", error);
+    console.error("Det oppstod et problem ved utlogging: ", error);
     throw error;
   }
 };
@@ -83,10 +83,10 @@ export const signUp = async (
   try {
     const command = new SignUpCommand(params);
     const response = await cognitoClient.send(command);
-    console.log("Sign up success: ", response);
+    console.log("Registreringen er fullført: ", response);
     return response;
   } catch (error) {
-    console.error("Error signing up: ", error);
+    console.error("Et problem oppstod under brukerregistreringen: ", error);
     throw error;
   }
 };
@@ -100,10 +100,10 @@ export const confirmSignUp = async (username: string, code: string) => {
   try {
     const command = new ConfirmSignUpCommand(params);
     await cognitoClient.send(command);
-    console.log("User confirmed successfully");
+    console.log("Brukeren er bekreftet!");
     return true;
   } catch (error) {
-    console.error("Error confirming sign up: ", error);
+    console.error("Det oppstod et problem med bekreftelse: ", error);
     throw error;
   }
 };
