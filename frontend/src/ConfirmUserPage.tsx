@@ -12,7 +12,7 @@ const ConfirmUserPage = () => {
     e.preventDefault();
     try {
       await confirmSignUp(username, confirmationCode);
-      alert("Account confirmed successfully!\nSign in on next page.");
+      alert("Kontoen er bekreftet!");
       navigate("/home");
     } catch (error) {
       alert(`Failed to confirm account: ${error}`);

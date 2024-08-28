@@ -1,8 +1,10 @@
+import LogOut from "./LogOut";
+
 const Home = () => {
   return (
     <div>
       Velkommen inn!
-      <button>Logg ut</button>
+      <LogOut />
     </div>
   );
 };

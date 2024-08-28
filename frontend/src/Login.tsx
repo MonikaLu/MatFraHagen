@@ -34,7 +34,7 @@ export const Login = () => {
   const handleSignUp = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      alert("Passwords do not match");
+      alert("Passordene er ikke like");
       return;
     }
     try {

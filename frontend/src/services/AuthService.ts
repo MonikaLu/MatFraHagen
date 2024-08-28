@@ -2,6 +2,7 @@ import {
   AuthFlowType,
   CognitoIdentityProviderClient,
   ConfirmSignUpCommand,
+  GlobalSignOutCommand,
   InitiateAuthCommand,
   SignUpCommand,
 } from "@aws-sdk/client-cognito-identity-provider";
@@ -37,6 +38,28 @@ export const signIn = async (username: string, password: string) => {
     }
   } catch (error) {
     console.error("Error signing in: ", error);
+    throw error;
+  }
+};
+
+export const signOut = async () => {
+  try {
+    const accessToken = sessionStorage.getItem("accessToken");
+    if (accessToken) {
+      const params = {
+        AccessToken: accessToken,
+      };
+      const command = new GlobalSignOutCommand(params);
+      await cognitoClient.send(command);
+    }
+
+    sessionStorage.removeItem("idToken");
+    sessionStorage.removeItem("accessToken");
+    sessionStorage.removeItem("refreshToken");
+
+    window.location.href = "/login";
+  } catch (error) {
+    console.error("Error during sign out: ", error);
     throw error;
   }
 };

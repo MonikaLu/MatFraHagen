@@ -3,6 +3,7 @@ import "./App.css";
 import ConfirmUserPage from "./ConfirmUserPage";
 import Home from "./Home";
 import Login from "./Login";
+import LogOut from "./LogOut";
 
 function App() {
   const isAuthenticated = () => {
@@ -26,6 +27,7 @@ function App() {
             }
           />
           <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<LogOut />} />
           <Route path="/confirm" element={<ConfirmUserPage />} />
           <Route
             path="/home"
