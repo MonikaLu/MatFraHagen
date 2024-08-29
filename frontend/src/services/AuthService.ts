@@ -57,7 +57,7 @@ export const signOut = async () => {
     sessionStorage.removeItem("accessToken");
     sessionStorage.removeItem("refreshToken");
 
-    window.location.href = "/login";
+    window.location.href = "/";
   } catch (error) {
     console.error("Det oppstod et problem ved utlogging: ", error);
     throw error;

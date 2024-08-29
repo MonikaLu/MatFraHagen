@@ -7,7 +7,7 @@ const LogOut = () => {
   const handleLogOut = async () => {
     try {
       await signOut();
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       console.log("Det oppstod en feil ved utlogging", error);
     }
