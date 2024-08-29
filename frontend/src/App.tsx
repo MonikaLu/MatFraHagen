@@ -23,7 +23,7 @@ function App() {
           }
         />
       </Routes>
-      <div className="flex">
+      <div className="flex flex-col">
         <h2 className="p-4 text-center">LOGO</h2>
         <h1 className="p-4 text-center">Mat Fra Hagen</h1>
         <Link

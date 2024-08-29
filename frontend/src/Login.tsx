@@ -44,9 +44,14 @@ export const Login = () => {
   };
   return (
     <>
-      <div>
-        <h4>{isSignUp ? "Registrer for å lage en ny bruker" : "Logg inn"}</h4>
-        <form onSubmit={isSignUp ? handleSignUp : handleSignIn}>
+      <div className="flex flex-col justify-center items-center gap-y-5">
+        <h4 className="text-title1">
+          {isSignUp ? "Registrer for å lage en ny bruker" : "Mat Fra Hagen"}
+        </h4>
+        <form
+          onSubmit={isSignUp ? handleSignUp : handleSignIn}
+          className="flex flex-col gap-y-5"
+        >
           <div>
             <input
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -97,19 +102,19 @@ export const Login = () => {
           )}
           <button
             type="submit"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="text-buttonText bg-button focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             {isSignUp ? "Registrer" : "Logg inn"}
           </button>
         </form>
-        <button
-          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        <p
+          className="text-buttonText hover:cursor-pointer underline focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           onClick={() => setIsSignUp(!isSignUp)}
         >
           {isSignUp
             ? "Har du allerede en konto? Logg inn"
-            : "Trenger du en konto? Registrer"}
-        </button>
+            : "Ingen konto? Registrer!"}
+        </p>
       </div>
     </>
   );
