@@ -1,4 +1,4 @@
-import Blog, { BlogProps } from "../components/Blog";
+import BlogPreview, { BlogProps } from "../components/BlogPreview";
 
 const mockBlogs: BlogProps[] = [
   {
@@ -49,7 +49,7 @@ const AboutUsPage = () => {
       </div>
       <div className="flex flex-row gap-x-5">
         {mockBlogs.map((blog) => (
-          <Blog {...blog} />
+          <BlogPreview {...blog} />
         ))}
       </div>
     </div>
