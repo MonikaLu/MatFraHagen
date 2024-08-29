@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { confirmSignUp } from "./services/AuthService";
+import InputField from "./InputField";
 
 const ConfirmUserPage = () => {
   const navigate = useNavigate();
@@ -20,11 +21,11 @@ const ConfirmUserPage = () => {
   };
 
   return (
-    <div>
-      <h2>Confirm Account</h2>
+    <div className="flex flex-col justify-center items-center gap-y-5">
+      <h2 className="text-title1">Confirm Account</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <input
+          <InputField
             type="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
@@ -33,7 +34,7 @@ const ConfirmUserPage = () => {
           />
         </div>
         <div>
-          <input
+          <InputField
             type="text"
             value={confirmationCode}
             onChange={(e) => setConfirmationCode(e.target.value)}

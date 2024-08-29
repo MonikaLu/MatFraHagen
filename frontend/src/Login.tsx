@@ -46,7 +46,7 @@ export const Login = () => {
     <>
       <div className="flex flex-col justify-center items-center gap-y-5">
         <h4 className="text-title1">
-          {isSignUp ? "Registrer for å lage en ny bruker" : "Mat Fra Hagen"}
+          {isSignUp ? "Registrering:" : "Mat Fra Hagen"}
         </h4>
         <form
           onSubmit={isSignUp ? handleSignUp : handleSignIn}
