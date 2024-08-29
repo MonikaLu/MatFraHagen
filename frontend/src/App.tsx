@@ -1,15 +1,37 @@
 import "./App.css";
+import { Link, Navigate, Route, Routes } from "react-router-dom";
 import AdGrid from "./components/AdGrid";
 
 function App() {
+  const isAuthenticated = () => {
+    const accessToken = sessionStorage.getItem("accessToken");
+    return !!accessToken;
+  };
+
   return (
     <>
-      <div className="flex">
+      <h1 className="text-2xl font-bold underline">Mat Fra Hagen!!</h1>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            isAuthenticated() ? (
+              <Navigate replace to="/home" />
+            ) : (
+              <Navigate replace to="/" />
+            )
+          }
+        />
+      </Routes>
+      <div className="flex flex-col">
         <h2 className="p-4 text-center">LOGO</h2>
         <h1 className="p-4 text-center">Mat Fra Hagen</h1>
-        <button className="bg-button text-buttonText p-3 text-center ml-auto text-paragraph1 rounded-md">
+        <Link
+          to="/login"
+          className="bg-button text-buttonText p-4 text-center ml-auto"
+        >
           Logg inn
-        </button>
+        </Link>
       </div>
       <div className="">Søk etter område</div>
       <AdGrid />
