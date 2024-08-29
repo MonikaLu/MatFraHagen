@@ -7,24 +7,12 @@ interface InputFieldProps {
   required?: boolean;
 }
 
-const InputField = ({
-  type,
-  value,
-  onChange,
-  placeholder,
-  required,
-  id,
-}: InputFieldProps) => {
+const InputField = (props: InputFieldProps) => {
   return (
     <div>
       <input
-        id={id}
         className="bg-secondary text-paragraph text-sm rounded-lg focus:ring-stroke focus:border-stroke block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        type={type}
-        value={value}
-        onChange={onChange}
-        placeholder={placeholder}
-        required={required}
+        {...props}
       />
     </div>
   );

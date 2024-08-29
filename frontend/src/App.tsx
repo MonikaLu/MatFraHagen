@@ -1,5 +1,6 @@
 import "./App.css";
 import { Link, Navigate, Route, Routes } from "react-router-dom";
+import AdGrid from "./components/AdGrid";
 
 function App() {
   const isAuthenticated = () => {
@@ -33,7 +34,7 @@ function App() {
         </Link>
       </div>
       <div className="">Søk etter område</div>
-      <div>Her kommer view av annonser</div>
+      <AdGrid />
     </>
   );
 }

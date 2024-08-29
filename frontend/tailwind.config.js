@@ -10,15 +10,15 @@ export default {
         button: "#ffd803",
         buttonText: "#272343",
         stroke: "#272343",
-        secondary: "#e3f6f5",
-      },
-      illustration: {
         main: "#fffffe",
         highlight: "#ffd803",
+        secondary: "#e3f6f5",
         tertiary: "#bae8e8",
       },
+
       fontSize: {
         title1: "2rem",
+        paragraph1: "1.2rem",
       },
     },
   },
