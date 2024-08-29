@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { confirmSignUp } from "./services/AuthService";
 import InputField from "./InputField";
+import Button from "./Button";
 
 const ConfirmUserPage = () => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const ConfirmUserPage = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center gap-y-5">
+    <div className="flex flex-col justify-center items-center">
       <h2 className="text-title1">Confirm Account</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -42,7 +43,7 @@ const ConfirmUserPage = () => {
             required
           />
         </div>
-        <button type="submit">Bekreft kontoen</button>
+        <Button type="submit" btnText="Send" />
       </form>
     </div>
   );
