@@ -5,18 +5,22 @@ export default {
     extend: {
       colors: {
         background: "#fffffe",
-        headline:"#272343",
-        paragraph:"#2d334a",
-        button:"#ffd803",
-        buttonText:"#272343",
+        headline: "#272343",
+        paragraph: "#2d334a",
+        button: "#ffd803",
+        buttonText: "#272343",
       },
-      illustration:{
-        stroke:"#272343",
-        main:"#fffffe",
-        highlight:"#ffd803",
-        secondary:"#e3f6f5",
-        tertiary:"#bae8e8"
-      }
+      illustration: {
+        stroke: "#272343",
+        main: "#fffffe",
+        highlight: "#ffd803",
+        secondary: "#e3f6f5",
+        tertiary: "#bae8e8",
+      },
+      fontSize: {
+        title1: "2rem",
+        paragraph1: "1.2rem",
+      },
     },
   },
   plugins: [],
