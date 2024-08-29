@@ -22,27 +22,23 @@ const ConfirmUserPage = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center gap-y-5">
       <h2 className="text-title1">Confirm Account</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <InputField
-            type="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder="Username"
-            required
-          />
-        </div>
-        <div>
-          <InputField
-            type="text"
-            value={confirmationCode}
-            onChange={(e) => setConfirmationCode(e.target.value)}
-            placeholder="Confirmation Code"
-            required
-          />
-        </div>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-y-5">
+        <InputField
+          type="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Username"
+          required
+        />
+        <InputField
+          type="text"
+          value={confirmationCode}
+          onChange={(e) => setConfirmationCode(e.target.value)}
+          placeholder="Confirmation Code"
+          required
+        />
         <Button type="submit" btnText="Send" />
       </form>
     </div>
