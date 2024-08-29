@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { confirmSignUp } from "./services/AuthService";
-import InputField from "./ui/InputField";
-import Button from "./ui/Button";
+import { confirmSignUp } from "../services/AuthService";
+import InputField from "../ui/InputField";
+import Button from "../ui/Button";
 
 const ConfirmUserPage = () => {
   const navigate = useNavigate();

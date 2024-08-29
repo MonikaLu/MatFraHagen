@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { signIn, signUp } from "./services/AuthService";
+import { signIn, signUp } from "../services/AuthService";
 import { useNavigate } from "react-router-dom";
-import Button from "./ui/Button";
-import InputField from "./ui/InputField";
+import Button from "../ui/Button";
+import InputField from "../ui/InputField";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -93,7 +93,7 @@ export const Login = () => {
           <Button type="submit" btnText={isSignUp ? "Registrer" : "Logg inn"} />
         </form>
         <p
-          className="text-buttonText hover:cursor-pointer underline focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="text-buttonText hover:cursor-pointer underline focus:ring-4 focus:outline-none focus:ring-stroke font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-stroke dark:hover:bg-stroke dark:focus:ring-stroke"
           onClick={() => setIsSignUp(!isSignUp)}
         >
           {isSignUp

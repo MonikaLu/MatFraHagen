@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { signOut } from "./services/AuthService";
+import Button from "./ui/Button";
 
-const LogOut = () => {
+const Logout = () => {
   const navigate = useNavigate();
 
   const handleLogOut = async () => {
@@ -13,7 +14,11 @@ const LogOut = () => {
     }
   };
 
-  return <button onClick={handleLogOut}>Logg ut</button>;
+  return (
+    <div className="w-28">
+      <Button onClick={handleLogOut} btnText="Logg ut" />
+    </div>
+  );
 };
 
-export default LogOut;
+export default Logout;
