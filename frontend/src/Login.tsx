@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { signIn, signUp } from "./services/AuthService";
 import { useNavigate } from "react-router-dom";
-import Button from "./Button";
-import InputField from "./InputField";
+import Button from "./ui/Button";
+import InputField from "./ui/InputField";
 
 export const Login = () => {
   const [email, setEmail] = useState("");

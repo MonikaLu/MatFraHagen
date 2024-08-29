@@ -1,6 +1,6 @@
 import LogOut from "./LogOut";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <div>
       Velkommen til MatFraHagen!
@@ -9,4 +9,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
