@@ -7,6 +7,7 @@ import Login from "./pages/Login.tsx";
 import ConfirmUserPage from "./pages/ConfirmUserPage.tsx";
 import HomePage from "./pages/HomePage.tsx";
 import AboutUsPage from "./pages/AboutUsPage.tsx";
+import BlogPage from "./pages/BlogPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: "/aboutus",
     element: <AboutUsPage />,
+  },
+  {
+    path: "/blog/:blogId",
+    element: <BlogPage />,
   },
 ]);
 

@@ -6,6 +6,7 @@ export interface BlogProps {
   imageUrl: string;
   date: string;
   author: string;
+  id: string;
 }
 
 const BlogPreview = (props: BlogProps) => {
@@ -13,7 +14,7 @@ const BlogPreview = (props: BlogProps) => {
     <div className="flex flex-col items-start">
       <hr className=" w-full h-0.5 bg-stroke my-4" />
       <img src={props.imageUrl} alt="" className="object-cover h-48 w-96" />
-      <Link className="text-title2 hover:underline" to={"/blog/" + props.title}>
+      <Link className="text-title2 hover:underline" to={"/blog/" + props.id}>
         {props.title}
       </Link>
       <p className="text-paragraph">{props.date}</p>

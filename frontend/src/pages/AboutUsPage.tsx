@@ -8,6 +8,7 @@ const mockBlogs: BlogProps[] = [
     imageUrl: "/public/redde_verden.jpg",
     date: "12-02-2024",
     author: "Monika Luu",
+    id: "1",
   },
   {
     title: "Kortreist og langreist mat",
@@ -15,6 +16,7 @@ const mockBlogs: BlogProps[] = [
     imageUrl: "/public/local_food.jpg",
     date: "12-04-2024",
     author: "Monika Luu",
+    id: "2",
   },
   {
     title: "Hvordan dyrke egne grønnsaker?",
@@ -22,6 +24,7 @@ const mockBlogs: BlogProps[] = [
     imageUrl: "/public/local_plant.jpg",
     date: "12-07-2024",
     author: "Monika Luu",
+    id: "3",
   },
 ];
 
