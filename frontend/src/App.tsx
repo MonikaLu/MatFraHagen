@@ -27,6 +27,12 @@ function App() {
         <h2 className="p-4 text-center">LOGO</h2>
         <h1 className="p-4 text-center">Mat Fra Hagen</h1>
         <Link
+          to="/aboutus"
+          className="bg-button text-buttonText p-4 text-center ml-auto"
+        >
+          Om Oss
+        </Link>
+        <Link
           to="/login"
           className="bg-button text-buttonText p-4 text-center ml-auto"
         >
