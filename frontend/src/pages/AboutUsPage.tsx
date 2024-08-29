@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import BlogPreview, { BlogProps } from "../components/BlogPreview";
 
 const mockBlogs: BlogProps[] = [
@@ -27,6 +28,10 @@ const mockBlogs: BlogProps[] = [
 const AboutUsPage = () => {
   return (
     <div className="flex flex-col justify-center items-center">
+      <Link to={"/"} className="text-title1">
+        Mat Fra Hagen
+      </Link>
+
       <h1 className="text-title1">Om Oss</h1>
       <div className="h-full w-full bg-tertiary flex flex-col items-center my-5 p-10 gap-y-10">
         <h1 className="text-title2 font-semibold text-stroke">
