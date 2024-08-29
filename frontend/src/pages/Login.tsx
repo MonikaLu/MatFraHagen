@@ -45,14 +45,17 @@ export const Login = () => {
     }
   };
   return (
-    <>
-      <div className="flex flex-col justify-center items-center gap-y-5">
-        <h4 className="text-title1">
-          {isSignUp ? "Registrering:" : "Mat Fra Hagen"}
-        </h4>
+    <div className="w-full h-full flex flex-col items-center">
+      <h4 className="text-title1">
+        {isSignUp ? "Registrering:" : "Mat Fra Hagen"}
+      </h4>
+      <div className="w-full h-full flex flex-col justify-center items-center">
+        <h1 className="text-title1 m-2">
+          {isSignUp ? "Logg inn til Mat Fra Hagen" : "Registrer en bruker"}
+        </h1>
         <form
           onSubmit={isSignUp ? handleSignUp : handleSignIn}
-          className="flex flex-col gap-y-5"
+          className="flex flex-col gap-y-5 w-1/3"
         >
           <InputField
             id="email"
@@ -93,7 +96,7 @@ export const Login = () => {
           <Button type="submit" btnText={isSignUp ? "Registrer" : "Logg inn"} />
         </form>
         <p
-          className="text-buttonText hover:cursor-pointer underline focus:ring-4 focus:outline-none focus:ring-stroke font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-stroke dark:hover:bg-stroke dark:focus:ring-stroke"
+          className="text-buttonText hover:cursor-pointer hover:font-bold underline font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-stroke dark:hover:bg-stroke dark:focus:ring-stroke"
           onClick={() => setIsSignUp(!isSignUp)}
         >
           {isSignUp
@@ -101,7 +104,7 @@ export const Login = () => {
             : "Ingen konto? Registrer!"}
         </p>
       </div>
-    </>
+    </div>
   );
 };
 
