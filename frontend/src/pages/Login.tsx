@@ -51,7 +51,7 @@ export const Login = () => {
       </h4>
       <div className="w-full h-full flex flex-col justify-center items-center">
         <h1 className="text-title1 m-2">
-          {isSignUp ? "Logg inn til Mat Fra Hagen" : "Registrer en bruker"}
+          {isSignUp ? "Registrer en bruker" : "Logg inn"}
         </h1>
         <form
           onSubmit={isSignUp ? handleSignUp : handleSignIn}
