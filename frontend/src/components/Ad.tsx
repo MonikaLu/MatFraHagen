@@ -1,3 +1,5 @@
+import Button from "../ui/Button";
+
 interface AdProps {
   title: string;
   amount: number;
@@ -22,8 +24,8 @@ export default function Ad(props: AdProps) {
           ></img>
           <div className="m-4">
             <p>Antall: {props.amount} </p>
-            <p>{props.city}</p>
-            <button className="bg-button p-3 mt-10 rounded-md">Velg</button>
+            <p className="mb-5">{props.city}</p>
+            <Button btnText={"Velg"} />
           </div>
         </div>
       </section>

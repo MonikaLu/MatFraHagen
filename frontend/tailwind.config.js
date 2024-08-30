@@ -7,13 +7,13 @@ export default {
         background: "#fffffe",
         headline: "#272343",
         paragraph: "#2d334a",
-        button: "#ffd803",
+        button: "#bae8e8",
         buttonText: "#272343",
         stroke: "#272343",
         main: "#fffffe",
         highlight: "#ffd803",
         secondary: "#e3f6f5",
-        tertiary: "#bae8e8",
+        tertiary: "#ffd803",
       },
 
       fontSize: {
