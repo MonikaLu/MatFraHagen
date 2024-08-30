@@ -3,6 +3,7 @@ import { signIn, signUp } from "../services/AuthService";
 import { useNavigate } from "react-router-dom";
 import Button from "../ui/Button";
 import InputField from "../ui/InputField";
+import Header from "../components/Header";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -45,66 +46,69 @@ export const Login = () => {
     }
   };
   return (
-    <div className="w-full h-full flex flex-col items-center">
-      <h4 className="text-title1">
-        {isSignUp ? "Registrering:" : "Mat Fra Hagen"}
-      </h4>
-      <div className="w-full h-full flex flex-col justify-center items-center">
-        <h1 className="text-title1 m-2">
-          {isSignUp ? "Registrer en bruker" : "Logg inn"}
-        </h1>
-        <form
-          onSubmit={isSignUp ? handleSignUp : handleSignIn}
-          className="flex flex-col gap-y-5 w-1/3"
-        >
-          <InputField
-            id="email"
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
-            required
-          />
-
-          <InputField
-            id="username"
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder="Brukernavn"
-            required
-          />
-
-          <InputField
-            id="password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-            required
-          />
-          {isSignUp && (
+    <>
+      <Header />
+      <div className="w-full h-full flex flex-col items-center">
+        <div className="w-full h-full flex flex-col justify-center items-center">
+          <h1 className="text-title1 m-2">
+            {isSignUp ? "Registrer en bruker" : "Logg inn"}
+          </h1>
+          <form
+            onSubmit={isSignUp ? handleSignUp : handleSignIn}
+            className="flex flex-col gap-y-5 w-1/3"
+          >
             <InputField
-              id="confirmPassword"
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              placeholder="Bekreft passord"
+              id="email"
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
               required
             />
-          )}
-          <Button type="submit" btnText={isSignUp ? "Registrer" : "Logg inn"} />
-        </form>
-        <p
-          className="text-buttonText hover:cursor-pointer hover:font-bold underline font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-stroke dark:hover:bg-stroke dark:focus:ring-stroke"
-          onClick={() => setIsSignUp(!isSignUp)}
-        >
-          {isSignUp
-            ? "Har du allerede en konto? Logg inn"
-            : "Ingen konto? Registrer!"}
-        </p>
+
+            <InputField
+              id="username"
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Brukernavn"
+              required
+            />
+
+            <InputField
+              id="password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              required
+            />
+            {isSignUp && (
+              <InputField
+                id="confirmPassword"
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                placeholder="Bekreft passord"
+                required
+              />
+            )}
+            <Button
+              type="submit"
+              btnText={isSignUp ? "Registrer" : "Logg inn"}
+            />
+          </form>
+          <p
+            className="text-buttonText hover:cursor-pointer hover:font-bold underline font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-stroke dark:hover:bg-stroke dark:focus:ring-stroke"
+            onClick={() => setIsSignUp(!isSignUp)}
+          >
+            {isSignUp
+              ? "Har du allerede en konto? Logg inn"
+              : "Ingen konto? Registrer!"}
+          </p>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
