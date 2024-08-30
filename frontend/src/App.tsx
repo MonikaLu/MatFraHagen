@@ -24,6 +24,7 @@ function App() {
         />
       </Routes>
       <Header />
+
       <div className="">Søk etter område</div>
       <AdGrid />
     </>
