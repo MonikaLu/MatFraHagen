@@ -1,6 +1,7 @@
 import "./App.css";
 import { Link, Navigate, Route, Routes } from "react-router-dom";
 import AdGrid from "./components/AdGrid";
+import Button from "./ui/Button";
 
 function App() {
   const isAuthenticated = () => {
@@ -10,7 +11,6 @@ function App() {
 
   return (
     <>
-      <h1 className="text-2xl font-bold underline">Mat Fra Hagen!!</h1>
       <Routes>
         <Route
           path="/"
@@ -23,14 +23,10 @@ function App() {
           }
         />
       </Routes>
-      <div className="flex flex-col">
-        <h2 className="p-4 text-center">LOGO</h2>
-        <h1 className="p-4 text-center">Mat Fra Hagen</h1>
-        <Link
-          to="/login"
-          className="bg-button text-buttonText p-4 text-center ml-auto"
-        >
-          Logg inn
+      <div className="flex">
+        <img src="./public/logo-color.png" className="w-48" alt="logo"></img>
+        <Link to="/login" className="ml-auto">
+          <Button btnText={"Logg inn"} />
         </Link>
       </div>
       <div className="">Søk etter område</div>

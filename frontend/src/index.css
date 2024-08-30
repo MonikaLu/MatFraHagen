@@ -9,4 +9,6 @@ body {
 
 #root {
   height: 100%;
+  margin: 10vw;
+  margin-top: 5vh;
 }
