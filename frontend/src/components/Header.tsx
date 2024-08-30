@@ -1,14 +1,24 @@
 import { Link } from "react-router-dom";
-import Button from "../ui/Button";
 
 export default function Header() {
   return (
     <>
-      <div className="flex">
+      <div className="flex flex-row justify-between items-center">
         <img src="./public/logo-color.png" className="w-48" alt="logo"></img>
-        <Link to="/login" className="ml-auto mt-10">
-          <Button btnText={"Logg inn"} />
-        </Link>
+        <div className="flex flex-row gap-x-5">
+          <Link
+            to="/aboutus"
+            className="bg-tertiary text-buttonText p-4 text-center ml-auto"
+          >
+            Om Oss
+          </Link>
+          <Link
+            to="/login"
+            className="bg-tertiary text-buttonText p-4 text-center ml-auto"
+          >
+            Logg inn
+          </Link>
+        </div>
       </div>
     </>
   );

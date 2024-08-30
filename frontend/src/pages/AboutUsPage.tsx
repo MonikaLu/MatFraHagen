@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import BlogPreview, { BlogProps } from "../components/BlogPreview";
+import Header from "../components/Header";
 
 const mockBlogs: BlogProps[] = [
   {
@@ -30,37 +31,36 @@ const mockBlogs: BlogProps[] = [
 
 const AboutUsPage = () => {
   return (
-    <div className="flex flex-col justify-center items-center">
-      <Link to={"/"} className="text-title1">
-        Mat Fra Hagen
-      </Link>
-
-      <h1 className="text-title1">Om Oss</h1>
-      <div className="h-full w-full bg-tertiary flex flex-col items-center my-5 p-10 gap-y-10">
-        <h1 className="text-title2 font-semibold text-stroke">
-          Her finner du artikler på hvordan vi kan bidra til en bærekraftig
-          verden
-        </h1>
-        <p className="text-paragraph">
-          Mat Fra Hagen ønsker å bidra til at flere spiser plantebasert mat med
-          et sterkt fokus på bærekraft. Vi tror på kraften av rene, naturlige
-          ingredienser som ikke bare er bra for kroppen, men også for planeten.
-          Vår nettside har bønder med sesongens råvarer, dyrket lokalt når
-          mulig, for å redusere vårt karbonavtrykk og støtte bærekraftige
-          landbruksmetoder. Hos Mat Fra Hagen handler det ikke bare om å tilby
-          gode råvarer, men om å ta ansvar for fremtiden. Ved å velge
-          plantebaserte alternativer bidrar vi til å redusere miljøpåvirkningen
-          fra tradisjonell matproduksjon, samtidig som vi leverer smakfulle
-          retter som gleder ganen. Bli med oss på en reise mot en grønnere
-          fremtid, hvor hver bit teller!
-        </p>
+    <>
+      <Header />
+      <div className="flex flex-col justify-center items-center">
+        <h1 className="text-title1">Om Oss</h1>
+        <div className="h-full w-full bg-button flex flex-col items-center my-5 p-10 gap-y-10">
+          <h1 className="text-title2 font-semibold text-stroke">
+            Her finner du artikler på hvordan vi kan bidra til en bærekraftig
+            verden
+          </h1>
+          <p className="text-paragraph">
+            Mat Fra Hagen ønsker å bidra til at flere spiser plantebasert mat
+            med et sterkt fokus på bærekraft. Vi tror på kraften av rene,
+            naturlige ingredienser som ikke bare er bra for kroppen, men også
+            for planeten. Vår nettside har bønder med sesongens råvarer, dyrket
+            lokalt når mulig, for å redusere vårt karbonavtrykk og støtte
+            bærekraftige landbruksmetoder. Hos Mat Fra Hagen handler det ikke
+            bare om å tilby gode råvarer, men om å ta ansvar for fremtiden. Ved
+            å velge plantebaserte alternativer bidrar vi til å redusere
+            miljøpåvirkningen fra tradisjonell matproduksjon, samtidig som vi
+            leverer smakfulle retter som gleder ganen. Bli med oss på en reise
+            mot en grønnere fremtid, hvor hver bit teller!
+          </p>
+        </div>
+        <div className="flex flex-row gap-x-5">
+          {mockBlogs.map((blog) => (
+            <BlogPreview {...blog} />
+          ))}
+        </div>
       </div>
-      <div className="flex flex-row gap-x-5">
-        {mockBlogs.map((blog) => (
-          <BlogPreview {...blog} />
-        ))}
-      </div>
-    </div>
+    </>
   );
 };
 
