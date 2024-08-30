@@ -1,7 +1,7 @@
 import "./App.css";
-import { Link, Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import AdGrid from "./components/AdGrid";
-import Button from "./ui/Button";
+import Header from "./components/Header";
 
 function App() {
   const isAuthenticated = () => {
@@ -23,12 +23,7 @@ function App() {
           }
         />
       </Routes>
-      <div className="flex">
-        <img src="./public/logo-color.png" className="w-48" alt="logo"></img>
-        <Link to="/login" className="ml-auto">
-          <Button btnText={"Logg inn"} />
-        </Link>
-      </div>
+      <Header />
       <div className="">Søk etter område</div>
       <AdGrid />
     </>
